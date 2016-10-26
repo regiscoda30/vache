@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MEUHHHH</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+    
+    
+  <style>
+    #draggable {
+        width: 100px; 
+        height: 100px; 
+        padding: 0.5em;
+        float: left;
+        margin: 10px 10px 10px 0;
+        position: relative;
+        z-index: 1;
+      }
+    #droppable { 
+        background-image: url(hachoir0.jpg);
+        width: 300px;
+        height: 300px;
+        border: 3px solid black;
+        padding: 0.5em;
+        float: left;
+        margin: 10px; 
+        position: relative;
+        z-index: 10000;
+      }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( ".ui-widget-content" ).draggable();
+      var c = 0;
+    $( "#droppable" ).droppable({
+      drop: function( event, ui ) {
+        c++;
+        if(c==6) {
+        $('#droppable').css("background","url(hachoir.jpg) center").find( "p" ).html( "A TABLE!" );
+        }
+      }
+    });
+  } );
+  </script>
+</head>
+<body>
+    <div id="vache">
+ 
+        <img id="drag1" src="drag_img.png" class="ui-widget-content" width="86" height="64">
+        <img id="drag2" src="drag_img.png" class="ui-widget-content" width="86" height="64">
+        <img id="drag3" src="drag_img.png" class="ui-widget-content" width="86" height="64">
+        <img id="drag4" src="drag_img.png" class="ui-widget-content" width="86" height="64">
+        <img id="drag5" src="drag_img.png" class="ui-widget-content" width="86" height="64">
+        <img id="drag6" src="drag_img.png" class="ui-widget-content" width="86" height="64">
+  
+    </div>
+ 
+<div  id="droppable" class="ui-widget-header">
+  <p>Mettez les vaches dans le hachoir ^^</p>
+</div>
+ 
+ 
+</body>
+</html>
